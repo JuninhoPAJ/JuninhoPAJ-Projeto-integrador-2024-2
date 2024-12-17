@@ -9,7 +9,7 @@ const Index = () => {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login">
           <Stack.Screen options={{headerShown: false}} name="HomeTabs" component={HomeTabs}></Stack.Screen>
-          <Stack.Screen name="Login" component={Login}></Stack.Screen>
+          <Stack.Screen options={{headerShown: false}} name="Login" component={Login}></Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
     );
