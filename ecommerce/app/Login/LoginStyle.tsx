@@ -6,12 +6,32 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         padding: '5%'
     },
-    
-    loginInput : {
+
+    loginInput: {
+        height: 40,
         width: '100%',
         marginBottom: '5%',
         marginTop: '3%',
-        borderWidth: 1
+    },
+
+    button: {
+        borderRadius: 5,
+        width: "100%",
+        height: 40,
+        marginBottom: 15
+    },
+
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+
+    forgotPassword: {
+        textAlign: 'right',
+        textDecorationLine: 'underline',
+        color: 'gray',
+        marginBottom: 20
     }
 })
 
