@@ -10,8 +10,7 @@ const style = StyleSheet.create({
     loginInput: {
         height: 40,
         width: '100%',
-        marginBottom: '5%',
-        marginTop: '3%',
+        marginTop: '3%'
     },
 
     button: {
@@ -32,6 +31,13 @@ const style = StyleSheet.create({
         textDecorationLine: 'underline',
         color: 'gray',
         marginBottom: 20
+    },
+
+    error: {
+        width: '100%',
+        marginBottom: '5%',
+        color: '#E43E84',
+        fontWeight: "bold"
     }
 })
 

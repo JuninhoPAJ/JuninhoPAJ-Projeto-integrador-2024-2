@@ -4,6 +4,7 @@ import HomeTabs from "@/app/HomeTabs";
 import Login from '@/app/Login/Login';
 import Welcome from "@/app/Welcome/Welcome";
 import { PaperProvider } from "react-native-paper";
+import Toast from "react-native-toast-message";
 
 const Index = () => {
   const puplerTheme = {
@@ -60,6 +61,7 @@ const Index = () => {
           <Stack.Screen options={{ headerShown: false }} name="Login" component={Login}></Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
+      <Toast />
     </PaperProvider>
   );
 }

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create(
+const styles = (colors: any) => StyleSheet.create(
     {
         container: {
             flex: 1,
@@ -8,7 +8,7 @@ const styles = StyleSheet.create(
             alignItems: 'center',
             padding: '10%'
         },
-        
+
         button: {
             borderRadius: 5,
             width: "100%",
@@ -19,8 +19,28 @@ const styles = StyleSheet.create(
         title: {
             fontSize: 24,
             fontWeight: 'bold',
+            textAlign: 'center',
+
+        },
+
+        logo: {
+            textAlign: 'center',
+            color: colors.primary,
+            marginBottom: 20
+        },
+
+        welcomeMessage: {
+            fontSize: 24,
+            fontWeight: 'bold',
+            textAlign: 'center',
+            color: colors.primary,
+            marginBottom: 50
+        },
+
+        description: {
             textAlign: 'center'
         }
+
     }
 )
 
