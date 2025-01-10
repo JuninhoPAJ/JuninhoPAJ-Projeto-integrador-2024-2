@@ -4,6 +4,8 @@ import style from './LoginStyle';
 import Icon from 'react-native-vector-icons/SimpleLineIcons'
 import { Button, Text, useTheme, TextInput } from 'react-native-paper';
 import Toast from 'react-native-toast-message'
+import httpService from "../services/httpSevice"
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const Login = ({ navigation }: any) => {
@@ -29,7 +31,7 @@ const Login = ({ navigation }: any) => {
     }
   }
 
-  const validForm = (e: any) => {
+  const validForm = async (e: any) => {
     e.preventDefault()
     let hasError = false
     if (!emailRegex.test(emailInput.value) || !emailInput.value) {
@@ -43,8 +45,20 @@ const Login = ({ navigation }: any) => {
     }
 
     if (!hasError) {
-      showMessage("success", "Usuário logado com sucesso", "Credenciais válidas")
-      navigation.navigate("HomeTabs");
+      try {
+        const response = await httpService.login({ email: emailInput.value, password: passwordInput.value })
+        if (response.status === 200) {
+          const json = await response.json()
+          AsyncStorage.setItem("token", json.token)
+          showMessage("success", "Usuário logado com sucesso", "Credenciais válidas")
+          navigation.navigate("HomeTabs");
+        } else {
+          showMessage("error", "Error", "Credenciais inválidas")
+        }
+
+      } catch (error) {
+
+      }
     }
   }
 
